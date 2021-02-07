@@ -1,0 +1,58 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "welcome to school my lovely friends",
+      "body": "lorem ipusm dolor sit amet, consectetur adipiscing elit, sed do eimd temd ehaerlk doe, ded do d,sd e d",
+      "tags": [
+        "webdev",
+        "coding",
+        "news"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "vue js master course hihi hahah",
+      "body": "lorem ipusm dolor sit amet, consectetur adipiscing elit, sed do eimd temd ehaerlk doe, ded do d,sd e d",
+      "tags": [
+        "laguhing",
+        "eating",
+        "boook"
+      ]
+    },
+    {
+      "title": "God has a purpose for our lives",
+      "body": "God loves you so very much okay,\nnever give up on Him,\nHe loves you very much,\nthat is why He sent His Son Jesus Christ\nTo come and die for our sins!",
+      "tags": [
+        "Christ",
+        "Love",
+        "Salvation",
+        "JesusSaves",
+        "GodIsNotDead"
+      ],
+      "id": 3
+    },
+    {
+      "title": "You are loved",
+      "body": "I want to tell you that you are loved beyond measure!",
+      "tags": [
+        "hi",
+        "know",
+        "you",
+        "love",
+        "beyond",
+        "measure"
+      ],
+      "id": 4
+    },
+    {
+      "title": "Beyond the horizon",
+      "body": "beyond the horizon",
+      "tags": [
+        "beyond",
+        "Love"
+      ],
+      "id": 5
+    }
+  ]
+}
