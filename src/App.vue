@@ -19,5 +19,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
+button:hover{
+  background: #ce6e00;
+  cursor: pointer;
+}
 
 </style>

@@ -18,6 +18,7 @@
 <script>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { projectFirestore, timestamp } from '../firebase/config'
 
 
 export default {
@@ -39,15 +40,17 @@ export default {
             const post = { // we don't add an id property anymore to the post request we are making because json server automatically handles that for us.
                 title: title.value,
                 body: body.value,
-                tags: tags.value
+                tags: tags.value,
+                createdAt: timestamp() // remember, this timestamp is coming from the firebase config file. It is a function for creating a firebase special timestamp for the current time
             }
-            await fetch('http://localhost:3000/posts', { // when we are making a POST request with fetch()API, we pass an object as the second argument, which has a <method>, <headers> and <body> property
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},// (indicates the kind of data we are sending)
-                body: JSON.stringify(post) //the body of our request, which is the actual data we are sending/posting, we have to change it into a JSON string
-                //json is a data exchange format, it is a string of data basically, that is formatted to look javascript objects
-            })
-            router.push({ name: 'Home'}) //instead of using hard coded links, we can use the object {name: <value>}
+            // await fetch('http://localhost:3000/posts', { // when we are making a POST request with fetch()API, we pass an object as the second argument, which has a <method>, <headers> and <body> property
+            //     method: 'POST',
+            //     headers: {'Content-Type': 'application/json'},// (indicates the kind of data we are sending)
+            //     body: JSON.stringify(post) //the body of our request, which is the actual data we are sending/posting, we have to change it into a JSON string
+            //     //json is a data exchange format, it is a string of data basically, that is formatted to look javascript objects
+            // })
+            const response = await projectFirestore.collection('posts').add(post) //yes, as you can see, add() method takes a js object as argument(Yay!!)
+            router.push({ name: 'Home'}) //instead of using hard coded links, we can use the object {name: <value>} inside the router object instance, which helps us to programatically control routing, cycle through the web route history and redirect the user to different pages with the .go(), and .push() methods
         }
         return { title, body, tag, addTag, tags, handleSubmit }
     }

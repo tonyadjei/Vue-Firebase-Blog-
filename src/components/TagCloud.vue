@@ -2,7 +2,7 @@
   <div class="tag-cloud">
       <h3>Tags</h3>
       <div v-for="tag in tags" :key="tag">
-          <router-link :to="{ name: 'Tag' , params: { tag: tag}}">
+          <router-link :to="{ name: 'Tag' , params: { tag: tag} }">
               #{{ tag }}
           </router-link>
       </div>
@@ -16,8 +16,6 @@ export default {
     props: ['posts'],
     setup(props){ // when the setup() function is called, vue automatically passes the props property as an argument to it.
         const { tags } = tagsCloud(props.posts)
-
-
         return { tags }
     }
 

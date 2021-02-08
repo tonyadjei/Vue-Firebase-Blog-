@@ -1,5 +1,5 @@
 import firebase from 'firebase/app'
-import 'firebase/firestore'
+import 'firebase/firestore' //with firebase, you have manually import the services you are using, so we import firestore from the firebase package
 
 const firebaseConfig = {
     apiKey: "AIzaSyBJCmOV_ksxBID3b7jdlGMp8zYhMMrlnLs",
@@ -15,7 +15,9 @@ const firebaseConfig = {
   
   // init firestore service
   const projectFirestore = firebase.firestore()
+  const timestamp = firebase.firestore.FieldValue.serverTimestamp //this returns a function that is used to create the special TimeStamp data type that firebase uses
 
   // export projectFirestore so that we can import it from this file and use it in component files
+  // it is the reference we need to connect with our firestore database
 
-export { projectFirestore }
+export { projectFirestore, timestamp }
